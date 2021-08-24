@@ -9,6 +9,10 @@
 *.user
 *.userosscache
 *.sln.docstates
+*/Business/Abstract/_IDosyaOlusturmaService.cs
+*/Business/Concrete/_DosyaOlusturmaManager.cs
+*/Business/DosyaUretmeMetodlari
+*/WebApi/Controllers/_DosyaIslemleriController.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

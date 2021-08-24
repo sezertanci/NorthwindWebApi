@@ -1,4 +1,6 @@
 ﻿using Core.Entities.Abstract;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Concrete
 {
@@ -8,5 +10,8 @@ namespace Entities.Concrete
         public string CategoryName { get; set; }
         public string Description { get; set; }
         public byte[] Picture { get; set; }
+
+        //[NotMapped]
+        //public ICollection<Product> Products { get; set; }
     }
 }

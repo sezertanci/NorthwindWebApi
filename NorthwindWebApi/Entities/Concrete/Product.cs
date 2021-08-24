@@ -1,4 +1,5 @@
 ﻿using Core.Entities.Abstract;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Concrete
 {
@@ -14,5 +15,10 @@ namespace Entities.Concrete
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
+
+        [NotMapped]
+        public Category Category { get; set; }
+        [NotMapped]
+        public Supplier Supplier { get; set; }
     }
 }

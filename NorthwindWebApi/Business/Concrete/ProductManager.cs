@@ -41,6 +41,16 @@ namespace Business.Concrete
             return new SuccessResult(SuccessMessages.SuccessDeleted);
         }
 
+        public IDataResult<List<ProductView>> DetailedList()
+        {
+            return new SuccessDataResult<List<ProductView>>(_mapper.Map<List<ProductView>>(_productDal.GetProducts()));
+        }
+
+        public IDataResult<object> DetailedOjectList()
+        {
+            return new SuccessDataResult<object>(_productDal.DetailedOjectList());
+        }
+
         public IDataResult<ProductView> GetById(int id)
         {
             return new SuccessDataResult<ProductView>(_mapper.Map<ProductView>(_productDal.Get(x => x.ProductId == id)));

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Business.Abstract
 {
-    public interface ICommon<T> where T : class, new()
+    public interface ICommonService<T> where T : class, new()
     {
         public IDataResult<List<T>> GetList();
         public IDataResult<T> GetById(int id);

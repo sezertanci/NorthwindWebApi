@@ -12,5 +12,7 @@
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
+
+        public CategoryView CategoryView { get; set; }
     }
 }

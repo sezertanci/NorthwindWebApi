@@ -35,6 +35,26 @@ namespace WebApi.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet(template: "[action]")]
+        public IActionResult GetDetailedOjectList()
+        {
+            var result = _productService.DetailedOjectList();
+
+            if (result.Success) return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        [HttpGet(template: "[action]")]
+        public IActionResult GetDetailedList()
+        {
+            var result = _productService.DetailedList();
+
+            if (result.Success) return Ok(result);
+
+            return BadRequest(result);
+        }
+
         [HttpPost(template: "[action]")]
         public IActionResult Add([FromBody] ProductView productView)
         {
