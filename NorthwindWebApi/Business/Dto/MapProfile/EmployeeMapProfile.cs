@@ -4,11 +4,11 @@ using Entities.Concrete;
 
 namespace Business.Dto.MapProfile
 {
-    public class CategoryMapProfile : Profile
+    public class EmployeeMapProfile : Profile
     {
-        public CategoryMapProfile()
+        public EmployeeMapProfile()
         {
-            CreateMap<Category, CategoryView>().ReverseMap();
+            CreateMap<Employee, EmployeeView>().ReverseMap();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Business.Concrete
 
         public IDataResult<CategoryView> GetById(int id)
         {
-            return new SuccessDataResult<CategoryView>(_mapper.Map<CategoryView>(_categoryDal.Get(filter: x => x.CategoryId == id)));
+            return new SuccessDataResult<CategoryView>(_mapper.Map<CategoryView>(_categoryDal.Get(x => x.CategoryId == id)));
         }
 
         [ValidationAspect(typeof(CategoryValidator), Priority = 1)]

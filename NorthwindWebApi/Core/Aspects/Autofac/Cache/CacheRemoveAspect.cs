@@ -8,18 +8,18 @@ namespace Core.Aspects.Autofac.Cache
 {
     public class CacheRemoveAspect : MethodInterception
     {
-        private string _pattent;
+        private string _pattern;
         private ICacheManager _cacheManager;
 
         public CacheRemoveAspect(string pattern)
         {
-            _pattent = pattern;
+            _pattern = pattern;
             _cacheManager = ServiceTool.ServiceProvider.GetService<ICacheManager>();
         }
 
         protected override void OnSuccess(IInvocation invocation)
         {
-            _cacheManager.RemoveByPattern(_pattent);
+            _cacheManager.RemoveByPattern(_pattern);
         }
 
     }

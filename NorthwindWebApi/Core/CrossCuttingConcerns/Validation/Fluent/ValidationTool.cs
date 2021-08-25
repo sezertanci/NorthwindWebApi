@@ -4,13 +4,13 @@ namespace Core.CrossCuttingConcerns.Validation.Fluent
 {
     public static class ValidationTool
     {
-        public static void Validate(IValidator validator, IValidationContext entity)
+        public static void Validate(IValidator validator, object entity)
         {
-            var Result = validator.Validate(entity);
-
-            if(!Result.IsValid)
+            var context = new ValidationContext<object>(entity);
+            var result = validator.Validate(context);
+            if (result.Errors.Count > 0)
             {
-                throw new ValidationException(Result.Errors);
+                throw new ValidationException(result.Errors);
             }
         }
     }

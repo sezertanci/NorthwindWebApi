@@ -8,7 +8,7 @@ namespace Business.ValidationRules.FluentValidation
     {
         public CategoryValidator()
         {
-            RuleFor(x => x.CategoryName).NotEmpty().WithMessage(ValidationMessages.NotEmpty).MaximumLength(15).WithMessage(ValidationMessages.MaxLengthExceeded);
+            RuleFor(x => x.CategoryName).NotEmpty().WithMessage(ValidationMessages.NotEmpty).MaximumLength(15).WithMessage(ValidationMessages.MaxLengthExceeded + " - (15)");
         }
     }
 }
